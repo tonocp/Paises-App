@@ -6,13 +6,10 @@ import { debounceTime } from 'rxjs/operators';
 @Component({
   selector: 'app-pais-input',
   templateUrl: './pais-input.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class PaisInputComponent implements OnInit {
-
-
-  @Output() onEnter   : EventEmitter<string> = new EventEmitter();
+  @Output() onEnter: EventEmitter<string> = new EventEmitter();
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
 
   @Input() placeholder: string = '';
@@ -22,22 +19,16 @@ export class PaisInputComponent implements OnInit {
   termino: string = '';
 
   ngOnInit(): void {
-    this.debouncer
-      .pipe(debounceTime(300))
-      .subscribe( valor => {
-        this.onDebounce.emit( valor )
-    } );
+    this.debouncer.pipe(debounceTime(300)).subscribe((valor) => {
+      this.onDebounce.emit(valor);
+    });
   }
 
-  buscar(){
+  buscar() {
     this.onEnter.emit(this.termino);
   }
 
-  teclaPresionada (){
-
-    this.debouncer.next( this.termino );
-
+  teclaPresionada() {
+    this.debouncer.next(this.termino);
   }
-  
-
 }
