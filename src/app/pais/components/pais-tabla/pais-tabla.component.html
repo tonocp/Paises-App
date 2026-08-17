@@ -9,19 +9,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr
-      *ngFor="let pais of paises; let i = index"
-      class="animate__animated animate__fadeIn animate__faster"
-    >
-      <th>{{ i + 1 }}</th>
-      <th>
-        <img class="small-flag" [src]="pais.flags.svg" />
-      </th>
-      <th>{{ pais.name }} -- {{ pais.capital }}</th>
-      <th>{{ pais.population | number }} Habitantes.</th>
-      <th>
-        <a [routerLink]="['/pais', pais.alpha2Code]"> Ver... </a>
-      </th>
-    </tr>
+    @for (pais of paises; track pais; let i = $index) {
+      <tr
+        class="animate__animated animate__fadeIn animate__faster"
+        >
+        <th>{{ i + 1 }}</th>
+        <th>
+          <img class="small-flag" [src]="pais.flags.svg" [alt]="'Bandera de ' + pais.name" />
+        </th>
+        <th>{{ pais.name }} -- {{ pais.capital }}</th>
+        <th>{{ pais.population | number }} Habitantes.</th>
+        <th>
+          <a [routerLink]="['/pais', pais.alpha2Code]"> Ver... </a>
+        </th>
+      </tr>
+    }
   </tbody>
 </table>

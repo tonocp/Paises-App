@@ -1,8 +1,8 @@
-<div *ngIf="!pais; else divPais" class="alert alert-info">
-  Espere por favor...
-</div>
-
-<ng-template #divPais>
+@if (!pais) {
+  <div class="alert alert-info">
+    Espere por favor...
+  </div>
+} @else {
   <div class="row">
     <div class="col-12">
       <h1>
@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-4">
       <h3>Bandera</h3>
-      <img [src]="pais.flags.svg" class="img-thumbnail" />
+      <img [src]="pais.flags.svg" [alt]="'Bandera de ' + pais.name" class="img-thumbnail" />
     </div>
     <div class="col">
       <h3>Información</h3>
@@ -38,7 +38,6 @@
       </ul>
     </div>
   </div>
-
   <h3>Traducciones</h3>
   <div class="row">
     <div class="col">
@@ -54,4 +53,5 @@
       <span class="badge bg-primary mr-1"> {{ pais.translations.fa }} </span>
     </div>
   </div>
-</ng-template>
+}
+
