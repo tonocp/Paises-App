@@ -1,6 +1,6 @@
 # PaisesApp
 
-This is the GitHub repository for this project I made for searching _Countries_ by _Name, Capital, Region, etc..._ based on **Angular** and **Bootstrap**, using the [apicountries.com](https://www.apicountries.com/) free, keyless REST Countries API for queries.
+This is the GitHub repository for this project I made for searching _Countries_ by _Name, Capital, Region, etc..._ based on **Angular** and **Bootstrap**, using the [countries.dev](https://countries.dev/) free, keyless REST Countries API for queries.
 
 ## Requirements
 

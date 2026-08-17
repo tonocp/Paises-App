@@ -8,7 +8,7 @@ import { Country } from '../interfaces/pais.interface';
   providedIn: 'root',
 })
 export class PaisService {
-  private apiUrl: string = 'https://www.apicountries.com';
+  private apiUrl: string = 'https://countries.dev';
 
   get httpParams() {
     return new HttpParams().set(
