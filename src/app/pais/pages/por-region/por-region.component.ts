@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { PaisService } from '../../services/pais.service';
 import { Country } from '../../interfaces/pais.interface';
 
 @Component({
-  selector: 'app-por-region',
-  templateUrl: './por-region.component.html',
-  styles: [
-    `
+    selector: 'app-por-region',
+    templateUrl: './por-region.component.html',
+    styles: [
+        `
       button {
         margin-right: 5px;
       }
     `,
-  ],
+    ],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class PorRegionComponent {
   regiones: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
